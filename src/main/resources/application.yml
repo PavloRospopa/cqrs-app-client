@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+application:
+  integration:
+    product-service:
+      base-url: http://localhost:8080
+      products-url: ${application.integration.product-service.base-url}/products
+
+logging:
+  level:
+    rospopa.strpz2client: debug
+
+spring:
+  cache:
+    cache-names: products
+    redis:
+      time-to-live: 1m
